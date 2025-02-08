@@ -53,3 +53,14 @@ function convertCurrency(amount, exchangeRate) {
 }
 convertCurrency(100, 1.1)// Converted Amount: $110
 convertCurrency(250, 0.85)// Converted Amount: $212.5
+
+
+// Task 6: Discount Strategy for Bulk Orders
+
+let orders = [200, 600, 1200, 450, 800];// define the orders
+function applyBulkDiscount(orders, discountFunction) {
+    let discountedOrders = orders.map(discountFunction);// apply the discount function to each order
+    console.log(discountedOrders);// print the discounted orders
+    return discountedOrders;// return the discounted orders
+}
+applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount);// [200, 540, 1080, 450, 720]
